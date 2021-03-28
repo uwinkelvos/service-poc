@@ -1,0 +1,25 @@
+### GET user
+GET http://localhost:3000/user/42
+
+### GET user - fail
+GET http://localhost:3000/user/myid
+
+### POST user
+POST http://localhost:3000/user?debug=true
+Content-Type: application/json
+
+{
+	"first": "Firstname",
+	"middle": "Middlename",
+	"last": "Lastname"
+}
+
+### POST user - fail
+POST http://localhost:3000/user?debug=true
+Content-Type: application/json
+
+{
+	"first": "Firstname",
+	"middle": 42,
+	"_last": "Lastname"
+}

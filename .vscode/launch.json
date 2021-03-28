@@ -5,18 +5,16 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"type": "node",
+			"type": "pwa-node",
 			"request": "launch",
-			"name": "run file",
-			"skipFiles": [
-				"<node_internals>/**"
-			],
+			"runtimeVersion": "14",
+			"name": "run current file",
 			"program": "${file}",
-			"outFiles": [
-				"${workspaceFolder}/dist/**/*.js"
-			],
-			"outputCapture": "std",
-			"preLaunchTask": "${defaultBuildTask}"
+			"outFiles": ["${workspaceFolder}/dist/**/*.js"],
+			"sourceMaps": true,
+			"console": "integratedTerminal",
+			"preLaunchTask": "tsc:watch",
+			"outputCapture": "std"
 		}
 	]
 }
