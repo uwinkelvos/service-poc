@@ -1,11 +1,11 @@
 ### GET user
-GET http://localhost:3000/user/42
+GET http://localhost:3000/users/42
 
 ### GET user - fail
-GET http://localhost:3000/user/myid
+GET http://localhost:3000/users/myid
 
 ### POST user
-POST http://localhost:3000/user?debug=true
+POST http://localhost:3000/users?debug=true
 Content-Type: application/json
 
 {
@@ -15,11 +15,20 @@ Content-Type: application/json
 }
 
 ### POST user - fail
-POST http://localhost:3000/user?debug=true
+POST http://localhost:3000/users?debug=true
 Content-Type: application/json
 
 {
 	"first": "Firstname",
 	"middle": 42,
 	"_last": "Lastname"
+}
+
+### POST user - fail more
+POST http://localhost:3000/users?debug=true&debug=0
+Content-Type: application/json
+
+{
+	"first": "Firstname",
+	"last": "Lastname"
 }
